@@ -1,0 +1,16 @@
+Package: cobaltr
+Title: Interface Io COBALT
+Version: 0.1
+Authors@R: c(
+    person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
+Maintainer: Richèl J.C. Bilderbeek <richel@richelbilderbeek.nl>
+Description: 'COBALT' (<https://www.ncbi.nlm.nih.gov/tools/cobalt/>) is a 
+    widely used multiple sequence alignment tool.
+    'cobaltr' allows to install and use COBALT from R.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+URL: https://github.com/richelbilderbeek/cobaltr/
+BugReports: https://github.com/richelbilderbeek/cobaltr/
