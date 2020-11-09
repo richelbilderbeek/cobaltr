@@ -22,7 +22,7 @@ r_github_packages:
 
 before_script:
   # COBALT
-  #- if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
+  - if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
   # proselint
   - sudo pip install proselint
 
