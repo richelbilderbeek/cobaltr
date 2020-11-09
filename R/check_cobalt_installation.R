@@ -12,5 +12,8 @@ check_cobalt_installation <- function(
         "in COBALT folder '", cobalt_folder, "'"
       )
     }
-  } 
+  }
+  cobalt_bin_filename <- file.path(cobalt_folder, "cobalt.linux")
+  testthat::expect_true(file.exists(cobalt_bin_filename))
+  testthat::expect_equal(0, unname(file.access(cobalt_bin_filename, 1)))
 }

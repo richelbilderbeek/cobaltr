@@ -19,4 +19,10 @@ install_cobalt <- function(
       )
     }
   }
+  cobalt_bin_filename <- file.path(cobalt_folder, "cobalt.linux")
+  testthat::expect_true(file.exists(cobalt_bin_filename))
+  if (file.access(cobalt_bin_filename, 1) == -1) {
+    Sys.chmod(cobalt_bin_filename, "0777", use_umask = TRUE)
+  }
+  testthat::expect_equal(0, unname(file.access(cobalt_bin_filename, 1)))
 }

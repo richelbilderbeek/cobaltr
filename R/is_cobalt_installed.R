@@ -6,7 +6,7 @@ is_cobalt_installed <- function(
 ) {
   result <- FALSE
   tryCatch({
-    check_cobalt_installation()
+    cobaltr::check_cobalt_installation()
     result <- TRUE
   }, error = function(e) {
       if (verbose) message(e$msg)
