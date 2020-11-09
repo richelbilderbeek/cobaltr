@@ -13,6 +13,8 @@ get_cobalt_filenames <- function() {
     "cdd.psq",
     "cdd.rps",
     "cobalt.linux",
-    "README.cobalt"
+    "README.cobalt",
+    "README",
+    "patterns"
   )
 }

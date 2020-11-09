@@ -14,6 +14,8 @@ Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{fasta_filename}{name of a FASTA file}
 }
 \description{
 Documentation of general function arguments.
