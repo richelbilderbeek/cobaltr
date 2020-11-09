@@ -4,7 +4,10 @@
 \alias{is_cobalt_installed}
 \title{See if COBALT is installed}
 \usage{
-is_cobalt_installed()
+is_cobalt_installed(
+  cobalt_folder = file.path(rappdirs::user_data_dir(), "cobalt"),
+  verbose = FALSE
+)
 }
 \description{
 See if COBALT is installed
