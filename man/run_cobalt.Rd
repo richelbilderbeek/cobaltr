@@ -6,6 +6,7 @@
 \usage{
 run_cobalt(
   fasta_filename,
+  matrix_name = "BLOSUM62",
   cobalt_folder = get_default_cobalt_folder(),
   verbose = FALSE
 )
@@ -19,6 +20,9 @@ Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
 }
+\value{
+text of a FASTA file
+}
 \description{
-Run COBALT
+Will stop if COBALT has an error.
 }

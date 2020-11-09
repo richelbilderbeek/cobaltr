@@ -1,12 +1,17 @@
 #' Run COBALT
+#'
+#' Will stop if COBALT has an error.
 #' @inheritParams default_params_doc
+#' @return text of a FASTA file
 #' @export
 run_cobalt <- function(
   fasta_filename,
+  matrix_name = "BLOSUM62",
   cobalt_folder = get_default_cobalt_folder(),
   verbose = FALSE
 ) {
   testthat::expect_true(file.exists(fasta_filename))
+  testthat::expect_true(matrix_name %in% get_matrix_names())
   cobaltr::check_cobalt_installation(cobalt_folder = cobalt_folder)
   cobalt_bin_filename <- file.path(cobalt_folder, "cobalt.linux")
   testthat::expect_true(file.exists(cobalt_bin_filename))
@@ -24,8 +29,24 @@ run_cobalt <- function(
     "-b", cobalt_cdd_blocksfilename,
     "-i", fasta_filename,
     "-p", cobalt_patterns_filename,
-    "-f", cobalt_cdd_freq_filename
+    "-f", cobalt_cdd_freq_filename,
+    "-matrix", matrix_name
   )
   if (verbose) message("Running cmds: ", paste0(cmds, collapse = " "))
-  system2(command = cmds[1], args = cmds[-1], stdout = TRUE, stderr = TRUE)
+  suppressWarnings({
+    out <- system2(
+      command = cmds[1],
+      args = cmds[-1],
+      stdout = TRUE,
+      stderr = TRUE
+    )
+  })
+  if (attr(x = out, which = "status") == 3) {
+    stop(
+      "Error in 'run_cobalt'.\n",
+      "COBALT error message: ", paste0(out, collapse = "\n"), "\n",
+      "cmds: '", paste0(cmds, collapse = " "), "'.\n"
+
+    )
+  }
 }

@@ -12,6 +12,7 @@
 #'   functions to find the documentation parameters
 default_params_doc <- function(
   cobalt_folder,
+  fasta_filename,
   verbose
 ) {
   # Nothing
