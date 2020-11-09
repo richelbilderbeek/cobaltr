@@ -2,6 +2,7 @@
 
 export(check_cobalt_installation)
 export(get_cobalt_filenames)
+export(get_default_cobalt_folder)
 export(get_matrix_names)
 export(install_cobalt)
 export(is_cobalt_installed)

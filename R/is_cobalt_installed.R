@@ -1,7 +1,8 @@
 #' See if COBALT is installed
+#' @inheritParams default_params_doc
 #' @export
 is_cobalt_installed <- function(
-  cobalt_folder = file.path(rappdirs::user_data_dir(), "cobalt"),
+  cobalt_folder = get_default_cobalt_folder(),
   verbose = FALSE
 ) {
   result <- FALSE

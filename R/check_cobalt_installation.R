@@ -1,9 +1,10 @@
 #' Check that COBALT is installed
 #'
 #' Check that COBALT is installed, give a helpful error message if not
+#' @inheritParams default_params_doc
 #' @export
 check_cobalt_installation <- function(
-  cobalt_folder = file.path(rappdirs::user_data_dir(), "cobalt")
+  cobalt_folder = get_default_cobalt_folder()
 ) {
   for (filename in get_cobalt_filenames()) {
     if (!file.exists(file.path(cobalt_folder, filename))) {

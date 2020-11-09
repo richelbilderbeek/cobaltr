@@ -4,7 +4,11 @@
 \alias{install_cobalt}
 \title{Install COBALT}
 \usage{
-install_cobalt(cobalt_folder = file.path(rappdirs::user_data_dir(), "cobalt"))
+install_cobalt(cobalt_folder = get_default_cobalt_folder())
+}
+\arguments{
+\item{cobalt_folder}{the folder where COBALT is installed in.
+Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 }
 \description{
 Install COBALT

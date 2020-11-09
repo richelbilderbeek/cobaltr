@@ -4,7 +4,11 @@
 \alias{run_cobalt_help}
 \title{Show the COBALT help page}
 \usage{
-run_cobalt_help(cobalt_folder = file.path(rappdirs::user_data_dir(), "cobalt"))
+run_cobalt_help(cobalt_folder = get_default_cobalt_folder())
+}
+\arguments{
+\item{cobalt_folder}{the folder where COBALT is installed in.
+Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 }
 \description{
 Show the COBALT help page

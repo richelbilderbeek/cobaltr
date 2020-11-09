@@ -5,9 +5,16 @@
 \title{See if COBALT is installed}
 \usage{
 is_cobalt_installed(
-  cobalt_folder = file.path(rappdirs::user_data_dir(), "cobalt"),
+  cobalt_folder = get_default_cobalt_folder(),
   verbose = FALSE
 )
+}
+\arguments{
+\item{cobalt_folder}{the folder where COBALT is installed in.
+Use \link{get_default_cobalt_folder} to get the default COBALT folder}
+
+\item{verbose}{if TRUE, additional information is displayed, that
+is potentially useful in debugging}
 }
 \description{
 See if COBALT is installed

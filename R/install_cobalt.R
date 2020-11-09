@@ -1,8 +1,12 @@
 #' Install COBALT
+#' @inheritParams default_params_doc
 #' @export
 install_cobalt <- function(
-  cobalt_folder = file.path(rappdirs::user_data_dir(), "cobalt")
+  cobalt_folder = get_default_cobalt_folder()
 ) {
+  if (is_cobalt_installed()) {
+    stop("COBALT is already installed in folder '", cobalt_folder, "'")
+  }
   # wget ftp://ftp.ncbi.nlm.nih.gov/pub/agarwala/cobalt/*.* # nolint this is what I did
   cobalt_files <- get_cobalt_filenames()
   dir.create(cobalt_folder, recursive = TRUE, showWarnings = FALSE)
@@ -13,7 +17,7 @@ install_cobalt <- function(
         "ftp://ftp.ncbi.nlm.nih.gov/pub/agarwala/cobalt",
         cobalt_file
       )
-      download.file(
+      utils::download.file(
         url = url,
         destfile = local_file_path
       )
