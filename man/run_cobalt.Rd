@@ -14,6 +14,9 @@ run_cobalt(
 \arguments{
 \item{fasta_filename}{name of a FASTA file}
 
+\item{matrix_name}{name of the COBALT matrix.
+Use \link{get_matrix_names} to get a list of all possible matrix names}
+
 \item{cobalt_folder}{the folder where COBALT is installed in.
 Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 

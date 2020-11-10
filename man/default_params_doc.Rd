@@ -6,13 +6,16 @@
 This function does nothing.
 It is intended to inherit function argument documentation.}
 \usage{
-default_params_doc(cobalt_folder, fasta_filename, verbose)
+default_params_doc(cobalt_folder, fasta_filename, matrix_name, verbose)
 }
 \arguments{
 \item{cobalt_folder}{the folder where COBALT is installed in.
 Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 
 \item{fasta_filename}{name of a FASTA file}
+
+\item{matrix_name}{name of the COBALT matrix.
+Use \link{get_matrix_names} to get a list of all possible matrix names}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
