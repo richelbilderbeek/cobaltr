@@ -6,6 +6,10 @@
 \usage{
 check_cobalt_options(cobalt_options)
 }
+\arguments{
+\item{cobalt_options}{a set of COBALT options,
+as can be created by \link{create_cobalt_options}}
+}
 \description{
 Will \link{stop} with a helpful error message if not
 }

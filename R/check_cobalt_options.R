@@ -1,6 +1,8 @@
 #' Check if the argument is a valid \code{cobalt_options}
 #'
 #' Will \link{stop} with a helpful error message if not
+#' @inheritParams default_params_doc
+#' @export
 check_cobalt_options <- function(cobalt_options) {
   if (!is.character(cobalt_options$search_pattern_filename)) {
     stop(
