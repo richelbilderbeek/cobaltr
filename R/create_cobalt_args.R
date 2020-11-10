@@ -12,8 +12,6 @@ create_cobalt_args <- function(
     "-db", cobalt_options$domain_database_filename,
     "-b", cobalt_options$conserved_block_filename,
     "-f", cobalt_options$residue_frequencies_filename,
-    "-seqalign", cobalt_options$destination_filename,
-    "-c", cobalt_options$pairwise_alignment_constraints_filename,
     "-evalue", cobalt_options$conserved_domain_threshold,
     "-evalue2", cobalt_options$filler_threshold,
     "-g0", cobalt_options$terminal_open_gap_penalty,
@@ -30,6 +28,12 @@ create_cobalt_args <- function(
     "-pseudo", cobalt_options$pseudocount_constant,
     "-fastme", cobalt_options$use_fastme
   )
+  if (cobalt_options$destination_filename != "") {
+    args <- c(args, "-seqalign", cobalt_options$destination_filename)
+  }
+  if (cobalt_options$pairwise_alignment_constraints_filename != "") {
+    args <- c(args, "-c", cobalt_options$pairwise_alignment_constraints_filename)
+  }
   if (cobalt_options$do_dry_run) {
     args <- c(args, "-dryrun")
   }
