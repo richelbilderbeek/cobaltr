@@ -13,8 +13,8 @@ is_cobalt_installed(
 \item{cobalt_folder}{the folder where COBALT is installed in.
 Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 
-\item{verbose}{if TRUE, additional information is displayed, that
-is potentially useful in debugging}
+\item{verbose}{verbose output
+the COBALT \code{-v} option}
 }
 \description{
 See if COBALT is installed

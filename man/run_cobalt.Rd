@@ -6,7 +6,7 @@
 \usage{
 run_cobalt(
   fasta_filename,
-  matrix_name = "BLOSUM62",
+  cobalt_options = create_cobalt_options(),
   cobalt_folder = get_default_cobalt_folder(),
   verbose = FALSE
 )
@@ -14,14 +14,14 @@ run_cobalt(
 \arguments{
 \item{fasta_filename}{name of a FASTA file}
 
-\item{matrix_name}{name of the COBALT matrix.
-Use \link{get_matrix_names} to get a list of all possible matrix names}
+\item{cobalt_options}{a set of COBALT options,
+as can be created by \link{create_cobalt_options}}
 
 \item{cobalt_folder}{the folder where COBALT is installed in.
 Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 
-\item{verbose}{if TRUE, additional information is displayed, that
-is potentially useful in debugging}
+\item{verbose}{verbose output
+the COBALT \code{-v} option}
 }
 \value{
 text of a FASTA file
