@@ -12,7 +12,7 @@ default_params_doc(
   conserved_domain_threshold,
   conservation_score_threshold,
   conserved_block_filename,
-  dbf_added_weight,
+  dfb_added_weight,
   destination_filename,
   do_dry_run,
   domain_database_filename,
@@ -52,7 +52,7 @@ The COBALT \code{-ccc} flag}
 \item{conserved_block_filename}{filename containing conserved blocks,
 the COBALT \code{-b} option}
 
-\item{dbf_added_weight}{the amount of extra weight (0..1)
+\item{dfb_added_weight}{the amount of extra weight (0..1)
 to give the actual sequence letter at that position,
 The COBALT \code{-dfb} flag}
 

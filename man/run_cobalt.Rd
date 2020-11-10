@@ -7,8 +7,7 @@
 run_cobalt(
   fasta_filename,
   cobalt_options = create_cobalt_options(),
-  cobalt_folder = get_default_cobalt_folder(),
-  verbose = FALSE
+  cobalt_folder = get_default_cobalt_folder()
 )
 }
 \arguments{
@@ -19,9 +18,6 @@ as can be created by \link{create_cobalt_options}}
 
 \item{cobalt_folder}{the folder where COBALT is installed in.
 Use \link{get_default_cobalt_folder} to get the default COBALT folder}
-
-\item{verbose}{verbose output
-the COBALT \code{-v} option}
 }
 \value{
 text of a FASTA file

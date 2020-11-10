@@ -82,10 +82,10 @@ check_cobalt_options <- function(cobalt_options) {
       "Actual class: ", class(cobalt_options$conservation_score_threshold)
     )
   }
-  if (!is.numeric(cobalt_options$dbf_added_weight)) {
+  if (!is.numeric(cobalt_options$dfb_added_weight)) {
     stop(
-      "'dbf_added_weight' must be a number. \n",
-      "Actual class: ", class(cobalt_options$dbf_added_weight)
+      "'dfb_added_weight' must be a number. \n",
+      "Actual class: ", class(cobalt_options$dfb_added_weight)
     )
   }
   if (!is.numeric(cobalt_options$ffb_added_weight)) {
@@ -136,8 +136,4 @@ check_cobalt_options <- function(cobalt_options) {
       "Actual class: ", class(cobalt_options$do_dry_run)
     )
   }
-
-
-
-
 }

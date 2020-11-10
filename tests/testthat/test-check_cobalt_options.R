@@ -122,9 +122,9 @@ test_that("conservation_score_threshold", {
 test_that("use", {
   expect_error(
     check_cobalt_options(
-      create_cobalt_options(dbf_added_weight = "nonsense")
+      create_cobalt_options(dfb_added_weight = "nonsense")
     ),
-    "'dbf_added_weight' must be a number"
+    "'dfb_added_weight' must be a number"
   )
 })
 

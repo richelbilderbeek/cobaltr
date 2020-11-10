@@ -1,7 +1,10 @@
 test_that("use", {
   if (!is_cobalt_installed()) return()
   fasta_filename <- system.file("extdata", "example.fasta", package = "cobaltr")
-  fasta_text <- run_cobalt(fasta_filename)
+  fasta_text <- run_cobalt(
+    fasta_filename = fasta_filename,
+    cobalt_options = create_cobalt_options()
+  )
   expect_equal(class(fasta_text), "character")
   expect_equal(4, length(fasta_text))
 })

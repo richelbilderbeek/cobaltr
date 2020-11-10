@@ -137,13 +137,13 @@ test_that("conservation_score_threshold", {
 })
 
 test_that("use", {
-  dbf_added_weight <- 0.42
+  dfb_added_weight <- 0.42
   cobalt_options <- create_cobalt_options(
-    dbf_added_weight = dbf_added_weight
+    dfb_added_weight = dfb_added_weight
   )
   expect_equal(
-    dbf_added_weight,
-    cobalt_options$dbf_added_weight
+    dfb_added_weight,
+    cobalt_options$dfb_added_weight
   )
 })
 

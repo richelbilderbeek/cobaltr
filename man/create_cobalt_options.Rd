@@ -18,7 +18,7 @@ create_cobalt_options(
   open_gap_in_middle_penalty = 11,
   middle_extend_gap_penalty = 1,
   conservation_score_threshold = 0.67,
-  dbf_added_weight = 0.5,
+  dfb_added_weight = 0.5,
   ffb_added_weight = 1,
   no_rps = FALSE,
   search_around_conserved_columns = TRUE,
@@ -73,7 +73,7 @@ The COBALT \code{-g0} flag}
 for a multiple alignment column to be considered as conserved.
 The COBALT \code{-ccc} flag}
 
-\item{dbf_added_weight}{the amount of extra weight (0..1)
+\item{dfb_added_weight}{the amount of extra weight (0..1)
 to give the actual sequence letter at that position,
 The COBALT \code{-dfb} flag}
 
