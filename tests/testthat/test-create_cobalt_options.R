@@ -15,7 +15,10 @@ test_that("domain_database_filename", {
   cobalt_options <- create_cobalt_options(
     domain_database_filename = domain_database_filename
   )
-  expect_equal(domain_database_filename, cobalt_options$domain_database_filename)
+  expect_equal(
+    domain_database_filename,
+    cobalt_options$domain_database_filename
+  )
 })
 
 test_that("conserved_block_filename", {
@@ -23,7 +26,10 @@ test_that("conserved_block_filename", {
   cobalt_options <- create_cobalt_options(
     conserved_block_filename = conserved_block_filename
   )
-  expect_equal(conserved_block_filename, cobalt_options$conserved_block_filename)
+  expect_equal(
+    conserved_block_filename,
+    cobalt_options$conserved_block_filename
+  )
 })
 
 test_that("residue_frequencies_filename", {
@@ -48,14 +54,14 @@ test_that("destination_filename", {
   )
 })
 
-test_that("pairwise_alignment_constraints_filename", {
-  pairwise_alignment_constraints_filename <- tempfile()
+test_that("pac_filename", {
+  pac_filename <- tempfile()
   cobalt_options <- create_cobalt_options(
-    pairwise_alignment_constraints_filename = pairwise_alignment_constraints_filename
+    pac_filename = pac_filename
   )
   expect_equal(
-    pairwise_alignment_constraints_filename,
-    cobalt_options$pairwise_alignment_constraints_filename
+    pac_filename,
+    cobalt_options$pac_filename
   )
 })
 
@@ -176,13 +182,13 @@ test_that("use", {
 })
 
 test_that("use", {
-  search_around_conserved_columns <- FALSE
+  search_around_ccs <- FALSE
   cobalt_options <- create_cobalt_options(
-    search_around_conserved_columns = search_around_conserved_columns
+    search_around_ccs = search_around_ccs
   )
   expect_equal(
-    search_around_conserved_columns,
-    cobalt_options$search_around_conserved_columns
+    search_around_ccs,
+    cobalt_options$search_around_ccs
   )
 })
 
@@ -224,4 +230,3 @@ test_that("use", {
     cobalt_options$do_dry_run
   )
 })
-

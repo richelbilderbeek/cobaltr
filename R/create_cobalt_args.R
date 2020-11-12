@@ -23,7 +23,7 @@ create_cobalt_args <- function(
     "-ffb", cobalt_options$ffb_added_weight,
     "-norps", stringr::str_to_lower(cobalt_options$no_rps),
     "-v", cobalt_options$verbose,
-    "-iter", cobalt_options$search_around_conserved_columns,
+    "-iter", cobalt_options$search_around_ccs,
     "-matrix", cobalt_options$score_matrix_name,
     "-pseudo", cobalt_options$pseudocount_constant,
     "-fastme", cobalt_options$use_fastme
@@ -31,8 +31,11 @@ create_cobalt_args <- function(
   if (cobalt_options$destination_filename != "") {
     args <- c(args, "-seqalign", cobalt_options$destination_filename)
   }
-  if (cobalt_options$pairwise_alignment_constraints_filename != "") {
-    args <- c(args, "-c", cobalt_options$pairwise_alignment_constraints_filename)
+  if (cobalt_options$pac_filename != "") {
+    args <- c(
+      args,
+      "-c", cobalt_options$pac_filename
+    )
   }
   if (cobalt_options$do_dry_run) {
     args <- c(args, "-dryrun")

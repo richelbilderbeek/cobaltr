@@ -15,4 +15,3 @@ is_cobalt_installed <- function(
   )
   result
 }
-

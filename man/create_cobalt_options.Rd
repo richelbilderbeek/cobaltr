@@ -10,7 +10,7 @@ create_cobalt_options(
   conserved_block_filename = file.path(get_default_cobalt_folder(), "cdd.blocks"),
   residue_frequencies_filename = file.path(get_default_cobalt_folder(), "cdd.freq"),
   destination_filename = "",
-  pairwise_alignment_constraints_filename = "",
+  pac_filename = "",
   conserved_domain_threshold = 0.01,
   filler_threshold = 0.01,
   terminal_open_gap_penalty = 5,
@@ -21,7 +21,7 @@ create_cobalt_options(
   dfb_added_weight = 0.5,
   ffb_added_weight = 1,
   no_rps = FALSE,
-  search_around_conserved_columns = TRUE,
+  search_around_ccs = TRUE,
   score_matrix_name = "BLOSUM62",
   pseudocount_constant = 2,
   use_fastme = FALSE,
@@ -45,7 +45,7 @@ the COBALT \code{-f} option}
 \item{destination_filename}{filename for destination text seqalign
 the COBALT \code{-seqalign} option}
 
-\item{pairwise_alignment_constraints_filename}{name of the file
+\item{pac_filename}{name of the file
 containing pairwise alignment constraints, one per line,
 each of the following form:
 \code{seq1_idx seq1_start seq1_end seq2_idx seq2_start seq2_end}.
@@ -85,7 +85,7 @@ The COBALT \code{-ffb} flag}
 \item{no_rps}{do not perform initial RPS blast search
 The COBALT \code{-norps} flag}
 
-\item{search_around_conserved_columns}{look for conserved columns
+\item{search_around_ccs}{look for conserved columns
 and iterate if any are found.
 The COBALT \code{-iter} flag}
 

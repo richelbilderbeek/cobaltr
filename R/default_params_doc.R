@@ -37,7 +37,7 @@
 #'   The COBALT \code{-norps} flag
 #' @param open_gap_in_middle_penalty
 #'   The COBALT \code{-g1} flag
-#' @param pairwise_alignment_constraints_filename name of the file
+#' @param pac_filename name of the file
 #'   containing pairwise alignment constraints, one per line,
 #'   each of the following form:
 #'   \code{seq1_idx seq1_start seq1_end seq2_idx seq2_start seq2_end}.
@@ -48,7 +48,7 @@
 #'   the COBALT \code{-f} option
 #' @param score_matrix_name name of the COBALT score matrix.
 #'   Use \link{get_matrix_names} to get a list of all possible matrix names
-#' @param search_around_conserved_columns look for conserved columns
+#' @param search_around_ccs look for conserved columns
 #'   and iterate if any are found.
 #'   The COBALT \code{-iter} flag
 #' @param search_pattern_filename filename containing search patterns,
@@ -83,11 +83,11 @@ default_params_doc <- function(
   middle_extend_gap_penalty,
   no_rps,
   open_gap_in_middle_penalty,
-  pairwise_alignment_constraints_filename,
+  pac_filename,
   pseudocount_constant,
   residue_frequencies_filename,
   score_matrix_name,
-  search_around_conserved_columns,
+  search_around_ccs,
   search_pattern_filename,
   terminal_extend_gap_penalty,
   terminal_open_gap_penalty,

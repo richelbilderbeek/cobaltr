@@ -34,10 +34,11 @@ check_cobalt_options <- function(cobalt_options) {
       "Actual class: ", class(cobalt_options$destination_filename)
     )
   }
-  if (!is.character(cobalt_options$pairwise_alignment_constraints_filename)) {
+  if (!is.character(cobalt_options$pac_filename)) {
     stop(
-      "'pairwise_alignment_constraints_filename' must be a filename. \n",
-      "Actual class: ", class(cobalt_options$pairwise_alignment_constraints_filename)
+      "'pac_filename' must be a filename. \n",
+      "Actual class: ",
+      class(cobalt_options$pac_filename)
     )
   }
   if (!is.numeric(cobalt_options$conserved_domain_threshold)) {
@@ -106,10 +107,10 @@ check_cobalt_options <- function(cobalt_options) {
       "Actual class: ", class(cobalt_options$verbose)
     )
   }
-  if (!is.logical(cobalt_options$search_around_conserved_columns)) {
+  if (!is.logical(cobalt_options$search_around_conserved_ccs)) {
     stop(
-      "'search_around_conserved_columns' must be TRUE or FALSE. \n",
-      "Actual class: ", class(cobalt_options$search_around_conserved_columns)
+      "'search_around_conserved_ccs' must be TRUE or FALSE. \n",
+      "Actual class: ", class(cobalt_options$search_around_conserved_ccs)
     )
   }
   if (!is.character(cobalt_options$score_matrix_name)) {

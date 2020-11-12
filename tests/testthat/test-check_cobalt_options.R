@@ -47,12 +47,12 @@ test_that("destination_filename", {
   )
 })
 
-test_that("pairwise_alignment_constraints_filename", {
+test_that("pac_filename", {
   expect_error(
     check_cobalt_options(
-      create_cobalt_options(pairwise_alignment_constraints_filename = 42)
+      create_cobalt_options(pac_filename = 42)
     ),
-    "'pairwise_alignment_constraints_filename' must be a filename"
+    "'pac_filename' must be a filename"
   )
 })
 
@@ -158,9 +158,9 @@ test_that("use", {
 test_that("use", {
   expect_error(
     check_cobalt_options(
-      create_cobalt_options(search_around_conserved_columns = "nonsense")
+      create_cobalt_options(search_around_ccs = "nonsense")
     ),
-    "'search_around_conserved_columns' must be TRUE or FALSE"
+    "'search_around_ccs' must be TRUE or FALSE"
   )
 })
 

@@ -10,7 +10,9 @@ run_cobalt <- function(
   cobalt_folder = get_default_cobalt_folder()
 ) {
   testthat::expect_true(file.exists(fasta_filename))
-  testthat::expect_true(cobalt_options$score_matrix_name %in% get_matrix_names())
+  testthat::expect_true(
+    cobalt_options$score_matrix_name %in% get_matrix_names()
+  )
   cobaltr::check_cobalt_installation(cobalt_folder = cobalt_folder)
   cobalt_bin_filename <- file.path(cobalt_folder, "cobalt.linux")
   testthat::expect_true(file.exists(cobalt_bin_filename))
@@ -19,7 +21,9 @@ run_cobalt <- function(
 
   testthat::expect_true(file.exists(cobalt_options$conserved_block_filename))
   testthat::expect_true(file.exists(cobalt_options$search_pattern_filename))
-  testthat::expect_true(file.exists(cobalt_options$residue_frequencies_filename))
+  testthat::expect_true(
+    file.exists(cobalt_options$residue_frequencies_filename)
+  )
   cmds <- c(
     cobalt_bin_filename,
     cobaltr::create_cobalt_args(
