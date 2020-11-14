@@ -4,43 +4,8 @@
 #' @inheritParams default_params_doc
 #' @export
 check_cobalt_options <- function(cobalt_options) {
-  if (!is.character(cobalt_options$search_pattern_filename)) {
-    stop(
-      "'search_pattern_filename' must be a filename. \n",
-      "Actual class: ", class(cobalt_options$search_pattern_filename)
-    )
-  }
-  if (!is.character(cobalt_options$domain_database_filename)) {
-    stop(
-      "'domain_database_filename' must be a filename. \n",
-      "Actual class: ", class(cobalt_options$domain_database_filename)
-    )
-  }
-  if (!is.character(cobalt_options$conserved_block_filename)) {
-    stop(
-      "'conserved_block_filename' must be a filename. \n",
-      "Actual class: ", class(cobalt_options$conserved_block_filename)
-    )
-  }
-  if (!is.character(cobalt_options$residue_frequencies_filename)) {
-    stop(
-      "'residue_frequencies_filename' must be a filename. \n",
-      "Actual class: ", class(cobalt_options$residue_frequencies_filename)
-    )
-  }
-  if (!is.character(cobalt_options$destination_filename)) {
-    stop(
-      "'destination_filename' must be a filename. \n",
-      "Actual class: ", class(cobalt_options$destination_filename)
-    )
-  }
-  if (!is.character(cobalt_options$pac_filename)) {
-    stop(
-      "'pac_filename' must be a filename. \n",
-      "Actual class: ",
-      class(cobalt_options$pac_filename)
-    )
-  }
+  cobaltr::check_cobalt_options_filenames(cobalt_options)
+
   if (!is.numeric(cobalt_options$conserved_domain_threshold)) {
     stop(
       "'conserved_domain_threshold' must be a number. \n",
@@ -135,6 +100,51 @@ check_cobalt_options <- function(cobalt_options) {
     stop(
       "'do_dry_run' must be TRUE or FALSE. \n",
       "Actual class: ", class(cobalt_options$do_dry_run)
+    )
+  }
+}
+
+#' Internal function
+#'
+#' Check if the filename in the \code{cobalt_options}
+#' are of the right datatype
+#' @export
+check_cobalt_options_filenames <- function(cobalt_options) {
+  if (!is.character(cobalt_options$search_pattern_filename)) {
+    stop(
+      "'search_pattern_filename' must be a filename. \n",
+      "Actual class: ", class(cobalt_options$search_pattern_filename)
+    )
+  }
+  if (!is.character(cobalt_options$domain_database_filename)) {
+    stop(
+      "'domain_database_filename' must be a filename. \n",
+      "Actual class: ", class(cobalt_options$domain_database_filename)
+    )
+  }
+  if (!is.character(cobalt_options$conserved_block_filename)) {
+    stop(
+      "'conserved_block_filename' must be a filename. \n",
+      "Actual class: ", class(cobalt_options$conserved_block_filename)
+    )
+  }
+  if (!is.character(cobalt_options$residue_frequencies_filename)) {
+    stop(
+      "'residue_frequencies_filename' must be a filename. \n",
+      "Actual class: ", class(cobalt_options$residue_frequencies_filename)
+    )
+  }
+  if (!is.character(cobalt_options$destination_filename)) {
+    stop(
+      "'destination_filename' must be a filename. \n",
+      "Actual class: ", class(cobalt_options$destination_filename)
+    )
+  }
+  if (!is.character(cobalt_options$pac_filename)) {
+    stop(
+      "'pac_filename' must be a filename. \n",
+      "Actual class: ",
+      class(cobalt_options$pac_filename)
     )
   }
 }

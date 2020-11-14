@@ -8,7 +8,7 @@ install_cobalt <- function(
     stop("COBALT is already installed in folder '", cobalt_folder, "'")
   }
   # wget ftp://ftp.ncbi.nlm.nih.gov/pub/agarwala/cobalt/*.* # nolint this is what I did
-  cobalt_files <- get_cobalt_filenames()
+  cobalt_files <- cobaltr::get_cobalt_filenames()
   dir.create(cobalt_folder, recursive = TRUE, showWarnings = FALSE)
   for (cobalt_file in cobalt_files) {
     local_file_path <- file.path(cobalt_folder, cobalt_file)

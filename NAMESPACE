@@ -2,6 +2,7 @@
 
 export(check_cobalt_installation)
 export(check_cobalt_options)
+export(check_cobalt_options_filenames)
 export(create_cobalt_args)
 export(create_cobalt_options)
 export(get_cobalt_filenames)
