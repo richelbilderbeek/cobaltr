@@ -107,10 +107,10 @@ check_cobalt_options <- function(cobalt_options) {
       "Actual class: ", class(cobalt_options$verbose)
     )
   }
-  if (!is.logical(cobalt_options$search_around_conserved_ccs)) {
+  if (!is.logical(cobalt_options$search_around_ccs)) {
     stop(
-      "'search_around_conserved_ccs' must be TRUE or FALSE. \n",
-      "Actual class: ", class(cobalt_options$search_around_conserved_ccs)
+      "'search_around_ccs' must be TRUE or FALSE. \n",
+      "Actual class: ", class(cobalt_options$search_around_ccs)
     )
   }
   if (!is.character(cobalt_options$score_matrix_name)) {
