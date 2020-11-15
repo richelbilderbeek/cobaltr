@@ -108,6 +108,7 @@ check_cobalt_options <- function(cobalt_options) {
 #'
 #' Check if the filename in the \code{cobalt_options}
 #' are of the right datatype
+#' @inheritParams default_params_doc
 #' @export
 check_cobalt_options_filenames <- function(cobalt_options) {
   if (!is.character(cobalt_options$search_pattern_filename)) {

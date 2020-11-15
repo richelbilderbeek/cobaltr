@@ -6,6 +6,10 @@
 \usage{
 check_cobalt_options_filenames(cobalt_options)
 }
+\arguments{
+\item{cobalt_options}{a set of COBALT options,
+as can be created by \link{create_cobalt_options}}
+}
 \description{
 Check if the filename in the \code{cobalt_options}
 are of the right datatype
