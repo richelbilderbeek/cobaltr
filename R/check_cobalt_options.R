@@ -5,6 +5,7 @@
 #' @export
 check_cobalt_options <- function(cobalt_options) {
   cobaltr::check_cobalt_options_filenames(cobalt_options)
+  cobaltr::check_cobalt_options_booleans(cobalt_options)
 
   if (!is.numeric(cobalt_options$conserved_domain_threshold)) {
     stop(
@@ -60,24 +61,6 @@ check_cobalt_options <- function(cobalt_options) {
       "Actual class: ", class(cobalt_options$ffb_added_weight)
     )
   }
-  if (!is.logical(cobalt_options$no_rps)) {
-    stop(
-      "'no_rps' must be TRUE or FALSE. \n",
-      "Actual class: ", class(cobalt_options$no_rps)
-    )
-  }
-  if (!is.logical(cobalt_options$verbose)) {
-    stop(
-      "'verbose' must be TRUE or FALSE. \n",
-      "Actual class: ", class(cobalt_options$verbose)
-    )
-  }
-  if (!is.logical(cobalt_options$search_around_ccs)) {
-    stop(
-      "'search_around_ccs' must be TRUE or FALSE. \n",
-      "Actual class: ", class(cobalt_options$search_around_ccs)
-    )
-  }
   if (!is.character(cobalt_options$score_matrix_name)) {
     stop(
       "'score_matrix_name' must be a string. \n",
@@ -88,18 +71,6 @@ check_cobalt_options <- function(cobalt_options) {
     stop(
       "'pseudocount_constant' must be a number \n",
       "Actual class: ", class(cobalt_options$pseudocount_constant)
-    )
-  }
-  if (!is.logical(cobalt_options$use_fastme)) {
-    stop(
-      "'use_fastme' must be TRUE or FALSE. \n",
-      "Actual class: ", class(cobalt_options$use_fastme)
-    )
-  }
-  if (!is.logical(cobalt_options$do_dry_run)) {
-    stop(
-      "'do_dry_run' must be TRUE or FALSE. \n",
-      "Actual class: ", class(cobalt_options$do_dry_run)
     )
   }
 }
@@ -146,6 +117,46 @@ check_cobalt_options_filenames <- function(cobalt_options) {
       "'pac_filename' must be a filename. \n",
       "Actual class: ",
       class(cobalt_options$pac_filename)
+    )
+  }
+}
+
+
+#' Internal function
+#'
+#' Check if the booleans in the \code{cobalt_options}
+#' are of the right datatype
+#' @inheritParams default_params_doc
+#' @export
+check_cobalt_options_booleans <- function(cobalt_options) {
+  if (!is.logical(cobalt_options$no_rps)) {
+    stop(
+      "'no_rps' must be TRUE or FALSE. \n",
+      "Actual class: ", class(cobalt_options$no_rps)
+    )
+  }
+  if (!is.logical(cobalt_options$verbose)) {
+    stop(
+      "'verbose' must be TRUE or FALSE. \n",
+      "Actual class: ", class(cobalt_options$verbose)
+    )
+  }
+  if (!is.logical(cobalt_options$search_around_ccs)) {
+    stop(
+      "'search_around_ccs' must be TRUE or FALSE. \n",
+      "Actual class: ", class(cobalt_options$search_around_ccs)
+    )
+  }
+  if (!is.logical(cobalt_options$use_fastme)) {
+    stop(
+      "'use_fastme' must be TRUE or FALSE. \n",
+      "Actual class: ", class(cobalt_options$use_fastme)
+    )
+  }
+  if (!is.logical(cobalt_options$do_dry_run)) {
+    stop(
+      "'do_dry_run' must be TRUE or FALSE. \n",
+      "Actual class: ", class(cobalt_options$do_dry_run)
     )
   }
 }
