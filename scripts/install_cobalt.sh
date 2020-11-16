@@ -15,6 +15,12 @@ cat $(find | egrep "/R/.*\\.R") > tempscript.R
 echo "install_cobalt()" >> tempscript.R
 sed -i'.orginal' "s/cobaltr:://g" tempscript.R
 cat tempscript.R
+
+# Run more often, because the large downloads do not always finish in one go
+Rscript tempscript.R
+Rscript tempscript.R
+Rscript tempscript.R
+Rscript tempscript.R
 Rscript tempscript.R
 rm tempscript.R
 rm tempscript.R.orginal
