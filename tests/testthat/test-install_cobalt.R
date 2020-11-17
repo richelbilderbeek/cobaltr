@@ -9,6 +9,7 @@ test_that("use", {
 
 test_that("install and uninstall in custom folder", {
   if (Sys.getenv("TRAVIS") == "") return()
+  if (!is_cobalt_installed()) return()
 
   folder_name <- tempfile(pattern = "cobalt_")
 
@@ -36,7 +37,13 @@ test_that("install and uninstall in custom folder", {
   expect_silent(check_cobalt_installation(folder_name))
 
   # Uninstall
-  uninstall_cobalt(cobalt_folder = folder_name)
+  expect_silent(
+    uninstall_cobalt(cobalt_folder = folder_name)
+  )
+  expect_error(
+    uninstall_cobalt(cobalt_folder = folder_name),
+    "Cannot uninstall absent COBALT"
+  )
 
   # Not installed anymore
   expect_false(is_cobalt_installed(cobalt_folder = folder_name))

@@ -6,6 +6,7 @@ uninstall_cobalt <- function(
 ) {
   if (!is_cobalt_installed(cobalt_folder)) {
     stop(
+      "Cannot uninstall absent COBALT"
     )
   }
   # For safety, we expect the files to be present,
