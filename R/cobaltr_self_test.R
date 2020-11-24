@@ -7,12 +7,15 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 cobaltr_self_test <- function(
-  cobalt_options = create_test_cobalt_options()
+  cobalt_options = create_cobalt_options(),
+  cobalt_folder = get_default_cobalt_folder()
 ) {
-  run_cobalt(
+  cobaltr::run_cobalt(
     fasta_filename = system.file(
       "extdata", "example.fasta", package = "cobaltr"
-    )
+    ),
+    cobalt_options = cobalt_options,
+    cobalt_folder = cobalt_folder
   )
   invisible(NULL)
 }

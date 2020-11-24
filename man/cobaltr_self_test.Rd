@@ -4,11 +4,17 @@
 \alias{cobaltr_self_test}
 \title{Self-test the package}
 \usage{
-cobaltr_self_test(cobalt_options = create_test_cobalt_options())
+cobaltr_self_test(
+  cobalt_options = create_cobalt_options(),
+  cobalt_folder = get_default_cobalt_folder()
+)
 }
 \arguments{
 \item{cobalt_options}{a set of COBALT options,
 as can be created by \link{create_cobalt_options}}
+
+\item{cobalt_folder}{the folder where COBALT is installed in.
+Use \link{get_default_cobalt_folder} to get the default COBALT folder}
 }
 \description{
 Self-test the package
