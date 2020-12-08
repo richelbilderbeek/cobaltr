@@ -53,7 +53,7 @@ jobs:
       - name: Install COBALT
         env:
           INSTALL_COBALT: ${{ matrix.install_cobalt }}
-        run: if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
+        shell: if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
 
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
