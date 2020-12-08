@@ -32,6 +32,12 @@ jobs:
           remotes::install_github("MangoTheCat/goodpractice")
         shell: Rscript {0}
 
+      - name: Show COBALT
+        run: echo "$INSTALL_COBALT"
+
+      - name: Install COBALT
+        run: if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
+
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
