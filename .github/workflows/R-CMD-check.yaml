@@ -10,7 +10,9 @@ jobs:
   R-CMD-check:
     strategy:
       matrix:
-        env: INSTALL_COBALT: [true, false]
+        include:
+          - INSTALL_COBALT: "true" 
+          - INSTALL_COBALT: "false"
 
     runs-on: macOS-latest
     env:
