@@ -11,8 +11,7 @@ jobs:
     strategy:
       matrix:
         env: 
-          INSTALL_COBALT: true
-          INSTALL_COBALT: false
+          INSTALL_COBALT: [true, false]
 
     runs-on: macOS-latest
     env:
