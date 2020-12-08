@@ -50,10 +50,15 @@ jobs:
           INSTALL_COBALT: ${{ matrix.install_cobalt }}
         run: if [[ "$INSTALL_COBALT" == false ]]; then echo "Nay!"; fi
 
+      - name: Show COBALT install script
+        env:
+          INSTALL_COBALT: ${{ matrix.install_cobalt }}
+        run: if [[ "$INSTALL_COBALT" == true ]]; then cat scripts/install_cobalt.sh; fi
+
       - name: Install COBALT
         env:
           INSTALL_COBALT: ${{ matrix.install_cobalt }}
-        shell: if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
+        run: if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
 
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
