@@ -73,6 +73,10 @@ jobs:
       - name: Lint
         run: if [[ "$INSTALL_COBALT" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
 
+      - name: Install cobaltr
+        run: remotes::install_github("richelbilderbeek/cobaltr")
+        shell: Rscript {0}
+
       - name: Report
         run: cobaltr::cobaltr_report()
         shell: Rscript {0}
