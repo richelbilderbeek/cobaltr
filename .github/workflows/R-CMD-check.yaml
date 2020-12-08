@@ -53,24 +53,15 @@ jobs:
       - name: Install COBALT
         env:
           INSTALL_COBALT: ${{ matrix.install_cobalt }}
-        run: if [[ "$INSTALL_COBALT" == true ]]; then ../../scripts/install_cobalt.sh; fi
+        run: if [[ "$INSTALL_COBALT" == true ]]; then ./scripts/install_cobalt.sh; fi
 
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
 
       - name: Test coverage
-        run: covr::codecov()
-        shell: Rscript {0}
-
-      - name: Install package
-        run: R CMD INSTALL .
+        run: if [[ "$INSTALL_COBALT" == true ]]; then Rscript -e 'covr::codecov()'; fi
 
       - name: Lint
-        run: lintr::lint_package()
-        shell: Rscript {0}
-
-      - name: Good practice
-        run: goodpractice::gp()
-        shell: Rscript {0}
+        run: if [[ "$INSTALL_COBALT" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
 
