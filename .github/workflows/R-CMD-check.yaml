@@ -12,7 +12,6 @@ jobs:
       matrix:
         env: 
           INSTALL_COBALT: true
-        env: 
           INSTALL_COBALT: false
 
     runs-on: macOS-latest
