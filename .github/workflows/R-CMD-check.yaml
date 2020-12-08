@@ -8,6 +8,11 @@ name: R-CMD-check
 
 jobs:
   R-CMD-check:
+    strategy:
+      matrix:
+        env: INSTALL_COBALT=true
+        env: INSTALL_COBALT=false
+
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
