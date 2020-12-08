@@ -39,4 +39,3 @@ fasta_filename <- system.file("extdata", "example.fasta", package = "cobaltr")
 run_cobalt(fasta_filename)
 ```
 
-
