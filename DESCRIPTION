@@ -7,7 +7,7 @@ Maintainer: Richèl J.C. Bilderbeek <richel@richelbilderbeek.nl>
 Description: 'COBALT' (<https://www.ncbi.nlm.nih.gov/tools/cobalt/>) is a 
     widely used multiple sequence alignment tool.
     'cobaltr' allows to install and use COBALT from R.
-License: GPL-3 | file LICENSE
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
