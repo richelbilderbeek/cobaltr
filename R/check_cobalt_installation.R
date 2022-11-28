@@ -10,7 +10,8 @@ check_cobalt_installation <- function(
     if (!file.exists(file.path(cobalt_folder, filename))) {
       stop(
         "File '", filename, "' not found ",
-        "in COBALT folder '", cobalt_folder, "'"
+        "in COBALT folder '", cobalt_folder, "'.\n ",
+        "Tip: run 'cobaltr::install_cobalt()' to install COBALT"
       )
     }
   }
