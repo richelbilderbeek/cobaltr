@@ -8,5 +8,10 @@ run_cobalt_help <- function(
   testthat::expect_true(file.exists(cobalt_bin_filename))
   testthat::expect_equal(0, unname(file.access(cobalt_bin_filename, 1)))
   cmds <- c(cobalt_bin_filename, "-help")
-  system2(command = cmds[1], args = cmds[-1], stdout = TRUE, stderr = TRUE)
+  system2(
+    command = normalizePath(cmds[1], mustWork = TRUE),
+    args = cmds[-1],
+    stdout = TRUE,
+    stderr = TRUE
+  )
 }
