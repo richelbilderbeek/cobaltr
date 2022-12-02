@@ -25,7 +25,7 @@ run_cobalt <- function(
     file.exists(cobalt_options$residue_frequencies_filename)
   )
   cmds <- c(
-    cobalt_bin_filename,
+    normalizePath(cobalt_bin_filename, mustWork = TRUE),
     cobaltr::create_cobalt_args(
       fasta_filename = fasta_filename,
       cobalt_options = cobalt_options
@@ -34,14 +34,24 @@ run_cobalt <- function(
   if (cobalt_options$verbose) {
     message("Running cmds: ", paste0(cmds, collapse = " "))
   }
-  suppressWarnings({
-    out <- system2(
-      command = cmds[1],
-      args = cmds[-1],
-      stdout = TRUE,
-      stderr = TRUE
-    )
-  })
+  tryCatch(
+    suppressWarnings({
+      out <- system2(
+        command = cmds[1],
+        args = cmds[-1],
+        stdout = TRUE,
+        stderr = TRUE
+      )
+    }
+    ),
+    error = function(e) {
+      stop(
+        "Running 'system2' failed for arguments\n",
+        paste0(cmds, collapse = " "), "\n",
+        "Error message: ", e$message
+      )
+    }
+  )
   if (is.null(attributes(out))) return(out)
   stop(
     "Error in 'run_cobalt'.\n",
