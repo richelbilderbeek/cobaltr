@@ -2,8 +2,8 @@ Package: cobaltr
 Title: Interface Io COBALT
 Version: 0.1
 Authors@R: c(
-    person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
-Maintainer: Richèl J.C. Bilderbeek <richel@richelbilderbeek.nl>
+    person("Richèl J.C.", "Bilderbeek", email = "rjcbilderbeek@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
+Maintainer: Richèl J.C. Bilderbeek <rjcbilderbeek@gmail.com>
 Description: 'COBALT' (<https://www.ncbi.nlm.nih.gov/tools/cobalt/>) is a 
     widely used multiple sequence alignment tool.
     'cobaltr' allows to install and use COBALT from R.
